@@ -122,12 +122,12 @@ const CustomerList = () => {
 
                         <div className="card rounded p-3">
                             <span >
-
+        {console.log("Profile=====", Profile)}
                                 <div className="d-flex flex-warp justify-content-start align-items-start">
                                     {dashbourt.map((ele) => ele.avatar === null ||
                                         ele.avatar === ""?
                                         <img src={DummyProfile} height={40} width={40} className="rounded-circle mt-2 " onClick={() => handleEditData(ele, "edit")} /> :
-                                        <img src={`${IMAGE_URL_BASE}/${Profile[0]}`} height={60} width={60} className="rounded-circle mt-2" onClick={() => handleEditData(ele, "edit")} />)}
+                                        <img src={`${IMAGE_URL_BASE}${Profile[0]}`} height={60} width={60} className="rounded-circle mt-2" onClick={() => handleEditData(ele, "edit")} />)}
                                     {dashbourt.map((ele) => (
                                         <div className="pt-2 pl-3">
                                             <h2 onClick={() => handleEditData(ele, "edit")}> {ele.role ? ele.role == 'admin' ? `${ele.admin_firstName} ${ele.admin_lastName}` : `${ele.FirstName} ${ele.LastName}` : "haiii"}</h2>
@@ -204,7 +204,7 @@ const CustomerList = () => {
                                                 <td>
                                                     {
                                                         item.avatar == "" || !item.avatar ? <img className="rounded-circle" src={DummyProfile} height={60} width={60} /> :
-                                                            <img className="rounded-circle" height={60} width={60} src={`${IMAGE_URL_BASE}/${item.avatar?.slice(13, 47)}`} />
+                                                            <img className="rounded-circle" height={60} width={60} src={`${IMAGE_URL_BASE}${item.avatar?.slice(13, 47)}`} />
                                                     }
                                                 </td>
                                                 <td>{item.FirstName}</td>
